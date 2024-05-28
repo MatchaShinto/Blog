@@ -1,0 +1,10 @@
+---
+layout: pagelayout
+---
+
+{% for restaurant in collections.restaurant %}
+<div>
+  <a href="{{restaurant.url}}">{{restaurant.data.title}}</a>
+  <p>{{restaurant.data.description}}</p>
+</div>
+{% endfor %}

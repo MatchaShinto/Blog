@@ -1,0 +1,19 @@
+:root {
+  color-scheme: light;
+}
+
+a:any-link {
+  color: blue;
+}
+
+nav.tabs {
+  display: flex;
+  flex-direction: row;
+  border-top: 1px solid currentcolor;
+  border-bottom: 1px solid currentcolor;
+
+  a {
+    margin: 0 1em;
+    text-decoration: none;
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "name": "ems-faves",
+  "version": "1.0.0",
+  "keywords": [],
+  "author": "Emily Tongdee",
+  "description": "",
+  "private": true,
+  "dependencies": {
+    "@11ty/eleventy": "^2.0.1",
+    "@11ty/eleventy-img": "^4.0.2"
+  }
+}
