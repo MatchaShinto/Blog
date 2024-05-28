@@ -10,11 +10,15 @@ title: Em's Faves
     <link rel="stylesheet" href="/style.css" />
   </head>
   <body>
-    <h1>Em's Faves</h1>
+    <header id="page-header">
+    <h1> Em's Faves! </h1>
     <nav class="tabs">
-      <a href="/"> Home </a>
-      <a href="/restaurants"> Restaurants </a>
+      <a {% if page.url=="/" %}class="active" {% endif %} href="/"> Home </a>
+      <a {% if page.url contains "/restaurants" %}class="active"{% endif %} href="/restaurants" >
+        Restaurants
+      </a>
     </nav>
+    </header>
     <main>{{ content }}</main>
   </body>
 </html>

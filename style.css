@@ -1,19 +1,58 @@
 :root {
   color-scheme: light;
+  /** Palette generated at https://paletton.com/#uid=53L0u0kl1Wx1x+IcEXDsUWkWEVB */
+  --bg: white;
+  --fg: black;
+  --primary-color: #6490F3;
+  --secondary-color: #B5A0F7;
+  --tertiary-color: #53F1F1;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--bg);
+  color: var(--fg);
 }
 
 a:any-link {
   color: blue;
 }
 
+
+#page-header {
+  background-color: var(--primary-color);
+}
+
+h1 {
+  margin: 0;
+  padding: 1rem;
+}
+
 nav.tabs {
   display: flex;
   flex-direction: row;
-  border-top: 1px solid currentcolor;
-  border-bottom: 1px solid currentcolor;
+  border-bottom: 1px solid black;
+  gap: 4px;
+  padding: 0 1rem;
 
   a {
-    margin: 0 1em;
+    padding: 0.5em 1em;
     text-decoration: none;
+    border: 1px solid black;
+    border-radius: 12px 12px 0 0;
+    margin-bottom: -1px;
+    color: var(--fg);
+    background-color: var(--secondary-color);
+
+    &.active {
+      color: var(--fg);
+      background-color: var(--bg);
+      border-bottom: none;
+    }
   }
+}
+
+main {
+  padding: 1em;
 }
