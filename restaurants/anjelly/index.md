@@ -1,6 +1,7 @@
 ---
 title: ĂnJelly
 description: Cold jelly - refreshing and mildly sweet
+date: 2024-05-25
 ---
 
 -   🪧ĂnJelly

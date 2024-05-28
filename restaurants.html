@@ -2,9 +2,28 @@
 layout: pagelayout
 ---
 
-{% for restaurant in collections.restaurant %}
-<div>
+<style>
+ul.article-list {
+  list-style-type: none;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-width: max-content;
+
+  li {
+    box-shadow: 0px 0px 4px black;
+    border-radius: 12px;
+    padding: 1em;
+  }
+}
+</style>
+
+<ul class="article-list">
+{% for restaurant in collections.restaurant | sort:"date" %}
+<li>
   <a href="{{restaurant.url}}">{{restaurant.data.title}}</a>
+  <time datetime="{{restaurant.data.date | isoDate}}">{{restaurant.data.date | localeDate }}</time>
   <p>{{restaurant.data.description}}</p>
-</div>
+</li>
 {% endfor %}
+</ul>
