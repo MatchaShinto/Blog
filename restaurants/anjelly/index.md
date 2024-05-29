@@ -4,8 +4,7 @@ description: Cold jelly - refreshing and mildly sweet
 date: 2024-05-25
 ---
 
--   🪧ĂnJelly
--   📍103 Saint Marks Place, New York, NY
+-   [103 St Marks Pl, New York, NY 10009](https://maps.app.goo.gl/KUqZsgFmYM3cU8Ca6)
 -   ✅Cold jelly - refreshing and mildly sweet
 
 These cute jiggly bunnies are the tablespoon-sized versions of

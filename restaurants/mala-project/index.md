@@ -10,7 +10,7 @@ carousel:
 ---
 
 -   Málà Project @malaproject
--   122 1st Ave., New York, NY 10009 (1 of 4 locations)
+-   [122 1st Ave., New York, NY 10009](https://maps.app.goo.gl/B6vNFkFjfwByDJSo6)
 
 The dry pot here isn’t just spicy, but packed full of flavor. They have 3
 difference spice levels, with the spiciest level being very hot but
