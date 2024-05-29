@@ -2,7 +2,6 @@
 title: Chihiro Tea
 date: 2024-05-25
 description: Boba tea soft opening discount!
-thumbnail: "1.jpg"
 carousel:
 - image: "1.jpg"
   alt: "Two teas on a table in front of a stuffed bear"

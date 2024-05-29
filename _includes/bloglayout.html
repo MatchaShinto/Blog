@@ -6,29 +6,41 @@ layout: pagelayout
 
 <style>
 h2 {
-  max-width: max-content;
-  view-transition-name: {{vtn}}title;
+  display: inline-block;
 }
 
-h3 {
-
+.description {
   max-width: max-content;
-  view-transition-name: {{vtn}}desc;
 }
 
 image-carousel {
   view-transition-name: {{vtn}}img;
 }
 
+.post-title {
+  view-transition-name: {{vtn}}info;
+
+  h2 {
+    margin: 0;
+  }
+
+  margin-bottom: 1rem;
+
+  max-width: max-content;
+}
+
 </style>
 
-{% if title %}
-<h2>{{title}}</h2>
-{% endif %}
+<header class="post-title">
+  {% if title %}
+  <h2>{{title}}</h2>
+  <time datetime="{{date | isoDate}}">{{date | localeDate }}</time>
+  {% endif %}
 
-{% if description %}
-<h3 style="view-transition-name: post{{page.url | replace:'/','-'}}desc">{{description}}</h3>
-{% endif %}
+  {% if description %}
+  <div class="description">{{description}}</div>
+  {% endif %}
+</header>
 
 {% if carousel %}
 <image-carousel style="view-transition-name: post{{page.url | replace:'/','-'}}img" >
