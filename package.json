@@ -5,8 +5,9 @@
   "author": "Emily Tongdee",
   "description": "",
   "private": true,
+  "type": "module",
   "dependencies": {
-    "@11ty/eleventy": "^2.0.1",
+    "@11ty/eleventy": "^3.0.0-alpha.10",
     "@11ty/eleventy-img": "^4.0.2"
   }
 }

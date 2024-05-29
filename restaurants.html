@@ -9,11 +9,20 @@ ul.article-list {
   flex-direction: column;
   gap: 1rem;
   max-width: max-content;
+  margin: auto;
+  padding: 0;
 
   li {
+    display: flex;
+    flex-direction: row;
     box-shadow: 0px 0px 4px black;
     border-radius: 12px;
     padding: 1em;
+    gap: 0 1em;
+  }
+
+  p {
+    margin: 0;
   }
 }
 </style>
@@ -21,9 +30,14 @@ ul.article-list {
 <ul class="article-list">
 {% for restaurant in collections.restaurant | sort:"date" %}
 <li>
-  <a href="{{restaurant.url}}">{{restaurant.data.title}}</a>
-  <time datetime="{{restaurant.data.date | isoDate}}">{{restaurant.data.date | localeDate }}</time>
-  <p>{{restaurant.data.description}}</p>
+  <div style="flex-grow: 1">
+    <a href="{{restaurant.url}}">{{restaurant.data.title}}</a>
+    <time datetime="{{restaurant.data.date | isoDate}}">{{restaurant.data.date | localeDate }}</time>
+    <p>{{restaurant.data.description}}</p>
+  </div>
+  {% if restaurant.data.thumbnail %}
+  <img src="{{restaurant.url}}/{{restaurant.data.thumbnail}}" alt="" eleventy:widths="64"/>
+  {% endif %}
 </li>
 {% endfor %}
 </ul>

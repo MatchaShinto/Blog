@@ -56,3 +56,28 @@ nav.tabs {
 main {
   padding: 1em;
 }
+
+image-carousel {
+  display: grid;
+  grid-auto-columns: 100%;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  max-width: 100%;
+  scroll-snap-type: x mandatory;
+  gap: 1em;
+
+  picture {
+    grid-row: 1;
+    display: grid;
+    scroll-snap-align: start;
+    flex-shrink: 0;
+    place-content: center center;
+  }
+
+  img {
+    object-fit: contain;
+    max-height: 80vh;
+    max-width: 100%;
+    height: auto;
+  }
+}

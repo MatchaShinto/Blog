@@ -10,4 +10,14 @@ layout: pagelayout
 <h3>{{description}}</h3>
 {% endif %}
 
+{% if carousel %}
+<image-carousel>
+{% for img in carousel %}
+<img src="{{img.image}}" alt="{{img.alt}}" loading="eager" />
+{% endfor %}
+</image-carousel>
+{% endif %}
+
 {{ content }}
+
+<script async type="module" src="/image-carousel.js"/>

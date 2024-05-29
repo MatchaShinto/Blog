@@ -2,6 +2,12 @@
 title: Málà Project
 description: 🌶️Favorite Dry Pot
 date: 2024-05-26
+thumbnail: "1.jpg"
+carousel:
+- image: "1.jpg"
+  alt: "A bowl of dry pot"
+- image: "2.jpg"
+  alt: "Some appetizer I forget what it's called"
 ---
 
 -   Málà Project @malaproject
