@@ -2,16 +2,36 @@
 layout: pagelayout
 ---
 
+{% assign vtn = page.url | replace:'/','-' | prepend: "post" %}
+
+<style>
+h2 {
+  max-width: max-content;
+  view-transition-name: {{vtn}}title;
+}
+
+h3 {
+
+  max-width: max-content;
+  view-transition-name: {{vtn}}desc;
+}
+
+image-carousel {
+  view-transition-name: {{vtn}}img;
+}
+
+</style>
+
 {% if title %}
 <h2>{{title}}</h2>
 {% endif %}
 
 {% if description %}
-<h3>{{description}}</h3>
+<h3 style="view-transition-name: post{{page.url | replace:'/','-'}}desc">{{description}}</h3>
 {% endif %}
 
 {% if carousel %}
-<image-carousel>
+<image-carousel style="view-transition-name: post{{page.url | replace:'/','-'}}img" >
 {% for img in carousel %}
 <img src="{{img.image}}" alt="{{img.alt}}" loading="eager" />
 {% endfor %}

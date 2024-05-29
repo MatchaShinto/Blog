@@ -29,14 +29,15 @@ ul.article-list {
 
 <ul class="article-list">
 {% for restaurant in collections.restaurant | sort:"date" %}
+{% assign vtn = restaurant.url | replace:'/','-' | prepend: "post" %}
 <li>
   <div style="flex-grow: 1">
-    <a href="{{restaurant.url}}">{{restaurant.data.title}}</a>
+    <a href="{{restaurant.url}}" style="view-transition-name: {{vtn}}title">{{restaurant.data.title}}</a>
     <time datetime="{{restaurant.data.date | isoDate}}">{{restaurant.data.date | localeDate }}</time>
-    <p>{{restaurant.data.description}}</p>
+    <p style="view-transition-name: {{vtn}}desc">{{restaurant.data.description}}</p>
   </div>
   {% if restaurant.data.thumbnail %}
-  <img src="{{restaurant.url}}/{{restaurant.data.thumbnail}}" alt="" eleventy:widths="64"/>
+  <img src="{{restaurant.url}}/{{restaurant.data.thumbnail}}" alt="Thumbnail image for {{restaurant.data.title}}" eleventy:widths="64" style="view-transition-name: {{vtn}}img"/>
   {% endif %}
 </li>
 {% endfor %}

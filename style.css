@@ -81,3 +81,11 @@ image-carousel {
     height: auto;
   }
 }
+
+@view-transition {
+  navigation: auto;
+}
+
+::view-transition-group(*) {
+	animation-duration: 0.25s;
+}
