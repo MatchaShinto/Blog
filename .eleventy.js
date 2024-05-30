@@ -1,8 +1,10 @@
 import { eleventyImageTransformPlugin } from "@11ty/eleventy-img";
+import { EleventyHtmlBasePlugin } from "@11ty/eleventy";
 
 const offsetMinutes = new Date().getTimezoneOffset();
 
 export default function (eleventyConfig) {
+  eleventyConfig.addPlugin(EleventyHtmlBasePlugin);
   eleventyConfig.addPassthroughCopy("style.css");
   eleventyConfig.addPassthroughCopy("image-carousel.js");
   eleventyConfig.addPassthroughCopy("{,!(_site)/**/}*.jpg");

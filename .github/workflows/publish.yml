@@ -21,7 +21,7 @@ jobs:
         with:
           node-version-file: package.json
       - run: npm i
-      - run: npx @11ty/eleventy
+      - run: npx @11ty/eleventy --pathprefix=Blog
       - uses: actions/upload-pages-artifact@v3.0.1
 
   deploy:
