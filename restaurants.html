@@ -30,16 +30,20 @@ ul.article-list {
 
 <ul class="article-list">
 {% for restaurant in collections.restaurant | sort:"date" %}
-{% assign vtn = restaurant.url | replace:'/','-' | prepend: "post" %}
 <li>
-  <div style="flex-grow: 1; view-transition-name: {{vtn}}info">
+  <div style="flex-grow: 1; view-transition-name: {{restaurant.url | concat: '/info' | slugify }}">
     <a href="{{restaurant.url}}">{{restaurant.data.title}}</a>
     <time datetime="{{restaurant.data.date | isoDate}}">{{restaurant.data.date | localeDate }}</time>
     <p>{{restaurant.data.description}}</p>
   </div>
   {% if restaurant.data.carousel %}
   {% assign thumb = restaurant.data.carousel | first %}
-  <img src="{{restaurant.url}}/{{thumb.image}}" alt="{{thumb.alt}}" eleventy:widths="64" style="view-transition-name: {{vtn}}img"/>
+  <img
+    src="{{restaurant.url}}/{{thumb.image}}"
+    alt="{{thumb.alt}}"
+    eleventy:widths="64"
+    style="view-transition-name: {{restaurant.url | concat: '/img' | slugify }}"
+  />
   {% endif %}
 </li>
 {% endfor %}

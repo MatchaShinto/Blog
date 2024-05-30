@@ -14,11 +14,11 @@ h2 {
 }
 
 image-carousel {
-  view-transition-name: {{vtn}}img;
+  view-transition-name: {{page.url | concat: '/img' | slugify}};
 }
 
 .post-title {
-  view-transition-name: {{vtn}}info;
+  view-transition-name: {{page.url | concat: '/info' | slugify}};
 
   h2 {
     margin: 0;
@@ -43,7 +43,7 @@ image-carousel {
 </header>
 
 {% if carousel %}
-<image-carousel style="view-transition-name: post{{page.url | replace:'/','-'}}img" >
+<image-carousel>
 {% for img in carousel %}
 <img src="{{img.image}}" alt="{{img.alt}}" loading="eager" />
 {% endfor %}
