@@ -45,7 +45,7 @@ image-carousel {
 {% if carousel %}
 <image-carousel>
 {% for img in carousel %}
-<img src="{{img.image}}" alt="{{img.alt}}" loading="eager" />
+<img src="{{img.image}}" alt="{{img.alt}}" loading="eager" eleventy:widths="500" />
 {% endfor %}
 </image-carousel>
 {% endif %}
