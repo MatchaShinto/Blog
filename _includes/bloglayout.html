@@ -29,6 +29,29 @@ image-carousel {
   max-width: max-content;
 }
 
+main {
+  display: grid;
+  gap: 1em;
+
+  grid-template-columns: 1fr 10px;;
+    grid-template-areas:
+      'header'
+      'aside'
+      'article';
+
+  @media (min-width: 1000px) {
+    grid-template-columns: 1fr 500px;
+    grid-template-rows: auto 1fr;
+    grid-template-areas:
+      'header aside'
+      'article aside';
+  }
+}
+
+header { grid-area: header; }
+aside { grid-area: aside; }
+article { grid-area: article; }
+
 </style>
 
 <header class="post-title">
@@ -42,14 +65,19 @@ image-carousel {
   {% endif %}
 </header>
 
-{% if carousel %}
-<image-carousel>
-{% for img in carousel %}
-<img src="{{img.image}}" alt="{{img.alt}}" loading="eager" eleventy:widths="500" />
-{% endfor %}
-</image-carousel>
-{% endif %}
+<article>
+  {{ content }}
+</article>
 
-{{ content }}
+<aside>
+  {% if carousel %}
+  <image-carousel>
+    {% for img in carousel %}
+      <img src="{{img.image}}" alt="{{img.alt}}" loading="eager" eleventy:widths="500" />
+    {% endfor %}
+  </image-carousel>
+  {% endif %}
+</aside>
+
 
 <script async type="module" src="/image-carousel.js"/>
