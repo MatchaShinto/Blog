@@ -2,15 +2,10 @@
 title: Chihiro Tea
 date: 2024-05-25
 description: Boba tea soft opening discount!
-carousel:
-- image: "1.jpg"
+instagram-url: "https://www.instagram.com/p/C7cESTcOQat"
+thumb: 
+  image: "thumb.jpg"
   alt: "Two teas on a table in front of a stuffed bear"
-- image: "2.jpg"
-  alt: "The Chihiro Tea mascot, a shiba dog"
-- image: "3.jpg"
-  alt: "Many framed photos of cats"
-- image: "4.jpg"
-  alt: "The exterior of the tea shop"
 ---
 
 [94 Willoughby St, Brooklyn, NY 11201](https://maps.app.goo.gl/kh59kuDHnkYv9aeq9)

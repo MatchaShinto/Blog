@@ -36,8 +36,8 @@ ul.article-list {
     <time datetime="{{restaurant.data.date | isoDate}}">{{restaurant.data.date | localeDate }}</time>
     <p>{{restaurant.data.description}}</p>
   </div>
-  {% if restaurant.data.carousel %}
-  {% assign thumb = restaurant.data.carousel | first %}
+  {% if restaurant.data.thumb %}
+  {% assign thumb = restaurant.data.thumb %}
   <img
     src="{{restaurant.url}}/{{thumb.image}}"
     alt="{{thumb.alt}}"

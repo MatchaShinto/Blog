@@ -5,79 +5,68 @@ layout: pagelayout
 {% assign vtn = page.url | replace:'/','-' | prepend: "post" %}
 
 <style>
-h2 {
-  display: inline-block;
-}
-
-.description {
-  max-width: max-content;
-}
-
-image-carousel {
-  view-transition-name: {{page.url | concat: '/img' | slugify}};
-}
-
-.post-title {
-  view-transition-name: {{page.url | concat: '/info' | slugify}};
-
   h2 {
-    margin: 0;
+    display: inline-block;
   }
 
-  margin-bottom: 1rem;
+  .description {
+    max-width: max-content;
+  }
 
-  max-width: max-content;
-}
+  .instagram-media {
+    view-transition-name: {{page.url | concat: '/img' | slugify}};
+  }
 
-main {
-  display: grid;
-  gap: 1em;
+  .post-title {
+    view-transition-name: {{page.url | concat: '/info' | slugify}};
 
-  grid-template-columns: 1fr 10px;;
+    h2 {
+      margin: 0;
+    }
+
+    margin-bottom: 1rem;
+
+    max-width: max-content;
+  }
+
+  main {
+    display: grid;
+    gap: 1em;
+
+    grid-template-columns: 1fr 10px;
     grid-template-areas:
       'header'
       'aside'
       'article';
 
-  @media (min-width: 1000px) {
-    grid-template-columns: 1fr 500px;
-    grid-template-rows: auto 1fr;
-    grid-template-areas:
-      'header aside'
-      'article aside';
+    @media (min-width: 1000px) {
+      .eleventy-plugin-embed-instagram {
+        width: 400px;
+      }
+      grid-template-columns: 1fr 400px;
+      grid-template-rows: auto 1fr;
+      grid-template-areas:
+        'header aside'
+        'article aside';
+    }
   }
-}
 
-header { grid-area: header; }
-aside { grid-area: aside; }
-article { grid-area: article; }
-
+  header { grid-area: header; }
+  aside { grid-area: aside; }
+  article { grid-area: article; }
 </style>
 
 <header class="post-title">
   {% if title %}
   <h2>{{title}}</h2>
   <time datetime="{{date | isoDate}}">{{date | localeDate }}</time>
-  {% endif %}
-
-  {% if description %}
+  {% endif %} {% if description %}
   <div class="description">{{description}}</div>
   {% endif %}
 </header>
 
-<article>
-  {{ content }}
-</article>
+<article>{{ content }}</article>
 
-<aside>
-  {% if carousel %}
-  <image-carousel>
-    {% for img in carousel %}
-      <img src="{{img.image}}" alt="{{img.alt}}" loading="eager" eleventy:widths="500" />
-    {% endfor %}
-  </image-carousel>
-  {% endif %}
-</aside>
-
-
-<script async type="module" src="/image-carousel.js"/>
+{% if instagram-url %}
+<aside>{% include "instagram-embed.html" %}</aside>
+{% endif %}

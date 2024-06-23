@@ -2,6 +2,10 @@
 title: ĂnJelly
 description: Cold jelly - refreshing and mildly sweet
 date: 2024-05-25
+instagram-url: "https://www.instagram.com/p/C7bi7PKu9GL"
+thumb:
+  image: "thumb.jpg"
+  alt: "Two jelly bunnies in two spoons"
 ---
 
 -   [103 St Marks Pl, New York, NY 10009](https://maps.app.goo.gl/KUqZsgFmYM3cU8Ca6)
